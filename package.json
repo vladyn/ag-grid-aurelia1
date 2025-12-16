@@ -1,0 +1,52 @@
+{
+  "name": "ag-grid-aurelia",
+  "version": "22.1.1",
+  "description": "ag-Grid Aurelia Component",
+  "main": "./main.js",
+  "typings": "./main.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && npm run compile && npm run add-headers",
+    "compile": "tsc",
+    "add-headers": "node scripts/add-headers.js",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ag-grid/ag-grid.git"
+  },
+  "keywords": [
+    "grid",
+    "data",
+    "table",
+    "aurelia"
+  ],
+  "author": "Niall Crosby <niall.crosby@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ag-grid/ag-grid/issues"
+  },
+  "homepage": "http://www.ag-grid.com/",
+  "devDependencies": {
+    "@types/core-js": "^2.5.0",
+    "ag-grid-community": "^31.1.4",
+    "aurelia-framework": "1.x",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^6.0.1",
+    "systemjs": "^6.15.1",
+    "typescript": "~5.6.0"
+  },
+  "peerDependencies": {
+    "ag-grid-community": "^31.1.4",
+    "aurelia-framework": "1.x"
+  },
+  "aurelia": {
+    "build": {
+      "resources": [
+        "ag-grid-aurelia/lib/agGridAurelia",
+        "ag-grid-aurelia/lib/agGridColumn",
+        "ag-grid-aurelia/lib/agTemplate"
+      ]
+    }
+  }
+}
