@@ -29,7 +29,7 @@
   "homepage": "http://www.ag-grid.com/",
   "devDependencies": {
     "@types/core-js": "^2.5.0",
-    "ag-grid-community": "^31.1.4",
+    "ag-grid-community": "^31.3.4",
     "aurelia-framework": "1.x",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^6.0.1",
@@ -37,7 +37,7 @@
     "typescript": "~5.6.0"
   },
   "peerDependencies": {
-    "ag-grid-community": "^31.1.4",
+    "ag-grid-community": "^31.3.4",
     "aurelia-framework": "1.x"
   },
   "aurelia": {
