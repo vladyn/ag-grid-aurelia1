@@ -1,7 +1,8 @@
 {
-  "name": "ag-grid-aurelia",
-  "version": "22.1.1",
-  "description": "ag-Grid Aurelia Component",
+  "name": "ag-grid-aurelia-plugin",
+  "version": "31.3.4",
+  "description": "ag-Grid Aurelia Component, a fork of Niall Crosby <niall.crosby@gmail.com>",
+  "credits": "Niall Crosby <niall.crosby@gmail.com>",
   "main": "./main.js",
   "typings": "./main.d.ts",
   "scripts": {
@@ -21,7 +22,7 @@
     "table",
     "aurelia"
   ],
-  "author": "Niall Crosby <niall.crosby@gmail.com>",
+  "author": "Vladimir Varbanov <vlado.var@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ag-grid/ag-grid/issues"
