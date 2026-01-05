@@ -2,8 +2,6 @@
 *.tsbuildinfo
 # JavaScript
 node_modules/
-dist/
-lib/
 # Optional npm cache directory
 .npm
 # Optional eslint cache
