@@ -1,25 +1,24 @@
 import type {
+    ColumnApi,
+    GridApi,
     GridOptions,
     GridParams
 } from "ag-grid-community";
+
 import {
-    ColumnApi,
-    ComponentUtil,
-    Grid,
-    GridApi
-} from "ag-grid-community";
-import {
-    ComponentAttached,
-    ComponentDetached,
+    autoinject,
     bindable,
     child,
     children,
+    ComponentAttached,
+    ComponentDetached,
     Container,
     customElement,
     inlineView,
     TaskQueue,
     ViewResources
 } from "aurelia-framework";
+import {ComponentUtil, Grid} from "ag-grid-community";
 import {AureliaFrameworkFactory} from "./aureliaFrameworkFactory";
 import {AgGridColumn} from "./agGridColumn";
 import {generateBindables} from "./agUtils";
@@ -35,6 +34,7 @@ interface IPropertyChanges {
 @generateBindables(ComponentUtil.EVENTS)
 // <slot> is required for @children to work.  https://github.com/aurelia/templating/issues/451#issuecomment-254206622
 @inlineView(`<template><slot></slot></template>`)
+@autoinject()
 export class AgGridAurelia implements ComponentAttached, ComponentDetached {
     // not intended for user to interact with. so putting _ in so if user gets reference
     // to this object, they kind'a know it's not part of the agreed interface
@@ -93,6 +93,7 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
         this.aureliaFrameworkComponentWrapper.setContainer(this.container);
         this.aureliaFrameworkComponentWrapper.setViewResources(this.viewResources);
 
+        this.gridOptions = ComponentUtil.combineAttributesAndGridOptions(this.gridOptions, this);
         this.gridParams = <any>{
             globalEventListener: this.globalEventListener.bind(this),
             frameworkFactory: this.auFrameworkFactory,
@@ -114,8 +115,13 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
         }
 
         if (this.dateTemplate) {
-            (<any>this.gridOptions).dateComponentFramework =
-                {template: this.dateTemplate.template};
+            this.gridOptions.dataTypeDefinitions = {
+                date: {
+                    baseDataType: 'date',
+                    extendsDataType: 'date',
+                    valueFormatter: () => this.dateTemplate.template
+                }
+            };
         }
 
         new Grid(this._nativeElement, this.gridOptions, this.gridParams);
