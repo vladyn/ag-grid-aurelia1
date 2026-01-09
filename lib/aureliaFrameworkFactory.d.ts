@@ -1,4 +1,4 @@
-// ag-grid-aurelia-plugin v31.3.7
+// ag-grid-aurelia-plugin v31.3.8
 import { Container, ViewResources } from "aurelia-framework";
 import { IFrameworkOverrides, AgPromise } from "ag-grid-community";
 export declare class AureliaFrameworkFactory implements IFrameworkOverrides {
