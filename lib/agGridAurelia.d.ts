@@ -1,5 +1,5 @@
 // ag-grid-aurelia-plugin v31.3.7
-import type { ColumnApi, GridApi, GridOptions } from "ag-grid-community";
+import type { GridApi, GridOptions } from "ag-grid-community";
 import { ComponentAttached, ComponentDetached, Container, TaskQueue, ViewResources } from "aurelia-framework";
 import { AureliaFrameworkFactory } from "./aureliaFrameworkFactory";
 import { AgGridColumn } from "./agGridColumn";
@@ -18,7 +18,6 @@ export declare class AgGridAurelia implements ComponentAttached, ComponentDetach
     context: any;
     private gridParams;
     api: GridApi;
-    columnApi: ColumnApi;
     columns: AgGridColumn[];
     fullWidthRowTemplate: AgFullWidthRowTemplate;
     dateTemplate: AgDateTemplate;

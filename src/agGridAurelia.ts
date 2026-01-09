@@ -1,5 +1,4 @@
 import type {
-    ColumnApi,
     GridApi,
     GridOptions,
     GridParams
@@ -18,7 +17,7 @@ import {
     TaskQueue,
     ViewResources
 } from "aurelia-framework";
-import {ComponentUtil, Grid} from "ag-grid-community";
+import {ComponentUtil, createGrid} from "ag-grid-community";
 import {AureliaFrameworkFactory} from "./aureliaFrameworkFactory";
 import {AgGridColumn} from "./agGridColumn";
 import {generateBindables} from "./agUtils";
@@ -49,7 +48,6 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
 
     // making these public, so they are accessible to people using the aurelia component references
     public api: GridApi;
-    public columnApi: ColumnApi;
 
     @children('ag-grid-column')
     public columns: AgGridColumn[] = [];
@@ -124,10 +122,7 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
             };
         }
 
-        new Grid(this._nativeElement, this.gridOptions, this.gridParams);
-        this.api = this.gridOptions.api;
-        this.columnApi = this.gridOptions.columnApi;
-
+        this.api = createGrid(this._nativeElement, this.gridOptions, this.gridParams);
         this._initialised = true;
     }
 
