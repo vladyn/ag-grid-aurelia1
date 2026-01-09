@@ -1,6 +1,5 @@
-// ag-grid-aurelia-plugin v31.3.4
-import type { GridOptions } from "ag-grid-community";
-import { ColumnApi, GridApi } from "ag-grid-community";
+// ag-grid-aurelia-plugin v31.3.7
+import type { ColumnApi, GridApi, GridOptions } from "ag-grid-community";
 import { ComponentAttached, ComponentDetached, Container, TaskQueue, ViewResources } from "aurelia-framework";
 import { AureliaFrameworkFactory } from "./aureliaFrameworkFactory";
 import { AgGridColumn } from "./agGridColumn";
