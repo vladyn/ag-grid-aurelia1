@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-aurelia-plugin",
-  "version": "31.3.6",
+  "version": "31.3.7",
   "description": "ag-Grid Aurelia Component, a fork of Niall Crosby <niall.crosby@gmail.com>",
   "credits": "Niall Crosby <niall.crosby@gmail.com>",
   "main": "./main.js",
