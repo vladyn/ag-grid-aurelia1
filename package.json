@@ -25,9 +25,9 @@
   "author": "Vladimir Varbanov <vlado.var@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ag-grid/ag-grid/issues"
+    "url": "https://github.com/vladynet/ag-grid-aurelia1/issues"
   },
-  "homepage": "http://www.ag-grid.com/",
+  "homepage": "https://github.com/vladynet/ag-grid-aurelia1/issues",
   "devDependencies": {
     "@types/core-js": "^2.5.0",
     "ag-grid-community": "^31.3.4",
