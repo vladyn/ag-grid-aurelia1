@@ -10,8 +10,13 @@ Please refer to www.ag-grid.com for full documentation on ag-Grid and Aurelia in
 
 Frameworks Supported
 ====================
-Framework specific Getting Started guides:
-[Aurelia](https://www.ag-grid.com/best-aurelia-data-grid/)
+Migration and Getting Started guides:
+
+[Migration Guide](https://www.ag-grid.com/javascript-data-grid/migration/)
+
+[API Reference](https://www.ag-grid.com/javascript-data-grid/reference/)
+
+[Docs](https://www.ag-grid.com/javascript-data-grid/getting-started/)
 
 In your main entry.
 ```
@@ -22,23 +27,17 @@ aurelia.use
 
 In your view model
 ```
-import { GridOptions } from 'ag-grid';
 export class MyGridPage {
-
-    gridOptions;
-    api;
-    options = {
+    gridOptions = {
         onGridReady: params => {
             console.log('Grid is ready!!');
             console.log('1st col field = ' + this.gridOptions.columnDefs[0].field);
             this.api = params.api;
         }   
     }
-
-    constructor() { }
     
     bind() {
-        this.api.setRowData([{id: 1, name: 'Shane'}, {id: 2, name: 'Sean'}]);
+        this.api.setGridOption('rowData', [{id: 1, name: 'Shane'}, {id: 2, name: 'Sean'}]);
     }
 
     onIdClicked(row){
@@ -69,7 +68,6 @@ In your view template.  Here we are adding columns using markup. ColumnDefs can 
           <ag-grid-column header-name="Name" field="name" >
           </ag-grid-column>
         </ag-grid-column>
-
       </ag-grid-aurelia>
     </div>
 
