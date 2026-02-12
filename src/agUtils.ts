@@ -1,4 +1,4 @@
-import {BindableProperty, HtmlBehaviorResource, metadata} from "aurelia-framework";
+import { BindableProperty, HtmlBehaviorResource, metadata } from "aurelia-framework";
 
 export function generateBindables(names: string[], bindingModeToUse?: any): any {
     return function (target: any, key: any, descriptor: any) {

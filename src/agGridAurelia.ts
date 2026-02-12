@@ -17,12 +17,12 @@ import {
     TaskQueue,
     ViewResources
 } from "aurelia-framework";
-import {ComponentUtil, createGrid} from "ag-grid-community";
-import {AureliaFrameworkFactory} from "./aureliaFrameworkFactory";
-import {AgGridColumn} from "./agGridColumn";
-import {generateBindables} from "./agUtils";
-import {AgDateTemplate, AgFullWidthRowTemplate} from './agTemplate';
-import {AureliaFrameworkComponentWrapper} from "./aureliaFrameworkComponentWrapper";
+import { ComponentUtil, createGrid } from "ag-grid-community";
+import { AureliaFrameworkFactory } from "./aureliaFrameworkFactory";
+import { AgGridColumn } from "./agGridColumn";
+import { generateBindables } from "./agUtils";
+import { AgDateTemplate, AgFullWidthRowTemplate } from './agTemplate';
+import { AureliaFrameworkComponentWrapper } from "./aureliaFrameworkComponentWrapper";
 
 interface IPropertyChanges {
     [key: string]: any
