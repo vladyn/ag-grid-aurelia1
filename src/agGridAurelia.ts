@@ -1,9 +1,3 @@
-import type {
-    GridApi,
-    GridOptions,
-    GridParams
-} from "ag-grid-community";
-
 import {
     autoinject,
     bindable,
@@ -17,7 +11,7 @@ import {
     TaskQueue,
     ViewResources
 } from "aurelia-framework";
-import {ComponentUtil, createGrid} from "ag-grid-community";
+import {ColumnApi, ComponentUtil, Grid, GridApi, GridOptions, GridParams} from "ag-grid-community";
 import {AureliaFrameworkFactory} from "./aureliaFrameworkFactory";
 import {AgGridColumn} from "./agGridColumn";
 import {generateBindables} from "./agUtils";
@@ -29,7 +23,7 @@ interface IPropertyChanges {
 }
 
 @customElement('ag-grid-aurelia')
-@generateBindables(ComponentUtil.ALL_PROPERTIES.filter((property) => property !== 'gridOptions' as any))
+@generateBindables(ComponentUtil.ALL_PROPERTIES.filter((property) => property !== 'gridOptions'))
 @generateBindables(ComponentUtil.EVENTS)
 // <slot> is required for @children to work.  https://github.com/aurelia/templating/issues/451#issuecomment-254206622
 @inlineView(`<template><slot></slot></template>`)
@@ -48,6 +42,7 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
 
     // making these public, so they are accessible to people using the aurelia component references
     public api: GridApi;
+    public columnApi: ColumnApi;
 
     @children('ag-grid-column')
     public columns: AgGridColumn[] = [];
@@ -91,7 +86,7 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
         this.aureliaFrameworkComponentWrapper.setContainer(this.container);
         this.aureliaFrameworkComponentWrapper.setViewResources(this.viewResources);
 
-        this.gridOptions = ComponentUtil.combineAttributesAndGridOptions(this.gridOptions, this);
+        this.gridOptions = ComponentUtil.copyAttributesToGridOptions(this.gridOptions, this);
         this.gridParams = <any>{
             globalEventListener: this.globalEventListener.bind(this),
             frameworkFactory: this.auFrameworkFactory,
@@ -108,21 +103,19 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
         }
 
         if (this.fullWidthRowTemplate) {
-            this.gridOptions.fullWidthCellRenderer =
+            this.gridOptions.fullWidthCellRendererFramework =
                 {template: this.fullWidthRowTemplate.template};
         }
 
         if (this.dateTemplate) {
-            this.gridOptions.dataTypeDefinitions = {
-                date: {
-                    baseDataType: 'date',
-                    extendsDataType: 'date',
-                    valueFormatter: () => this.dateTemplate.template
-                }
-            };
+            this.gridOptions.dateComponentFramework =
+                {template: this.dateTemplate.template};
         }
 
-        this.api = createGrid(this._nativeElement, this.gridOptions, this.gridParams);
+        new Grid(this._nativeElement, this.gridOptions, this.gridParams);
+        this.api = this.gridOptions.api;
+        this.columnApi = this.gridOptions.columnApi;
+
         this._initialised = true;
     }
 
@@ -135,7 +128,7 @@ export class AgGridAurelia implements ComponentAttached, ComponentDetached {
         changes[propertyName] = <any>{currentValue: newValue, previousValue: oldValue};
 
         if (this._initialised) {
-            ComponentUtil.processOnChange(changes, this.api);
+            ComponentUtil.processOnChange(changes, this.gridOptions, this.api, this.columnApi);
         }
     }
 

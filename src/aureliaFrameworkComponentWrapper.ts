@@ -1,10 +1,10 @@
 import { autoinject, Container, TaskQueue, transient, View, ViewCompiler, ViewResources } from "aurelia-framework";
-import { BaseComponentWrapper, Bean, FrameworkComponentWrapper, WrappableInterface } from 'ag-grid-community';
+import { BaseComponentWrapper, Bean, FrameworkComponentWrapper, WrapableInterface } from 'ag-grid-community';
 
 @autoinject()
 @transient()
 @Bean("frameworkComponentWrapper")
-export class AureliaFrameworkComponentWrapper extends BaseComponentWrapper<WrappableInterface> implements FrameworkComponentWrapper {
+export class AureliaFrameworkComponentWrapper extends BaseComponentWrapper<WrapableInterface> implements FrameworkComponentWrapper {
     private _container: Container;
     private _viewResources: ViewResources;
 
@@ -12,10 +12,10 @@ export class AureliaFrameworkComponentWrapper extends BaseComponentWrapper<Wrapp
         super();
     }
 
-    createWrapper(template: any): WrappableInterface {
+    createWrapper(template: any): WrapableInterface {
         let that = this;
 
-        class DynamicComponent extends BaseGuiComponent implements WrappableInterface {
+        class DynamicComponent extends BaseGuiComponent implements WrapableInterface {
             constructor() {
                 super(that.taskQueue, that._viewCompiler);
             }
@@ -30,7 +30,7 @@ export class AureliaFrameworkComponentWrapper extends BaseComponentWrapper<Wrapp
 
             callMethod(name: string, args: IArguments): void {
                 const componentRef = this.getFrameworkComponentInstance();
-                return wrapper.getFrameworkComponentInstance()[name].apply(componentRef, args);
+                return wrapper.getFrameworkComponentInstance()[name].apply(componentRef, args)
 
             }
 
@@ -39,7 +39,7 @@ export class AureliaFrameworkComponentWrapper extends BaseComponentWrapper<Wrapp
             }
         }
 
-        const wrapper: DynamicComponent = new DynamicComponent();
+        let wrapper: DynamicComponent = new DynamicComponent();
         return wrapper;
     }
 

@@ -4,29 +4,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
-    "noEmitOnError": false,
-    "moduleResolution": "bundler",
-    "module": "es2022",
-    "target": "es2022",
-    "outDir": "lib",
-    "rootDir": "src",
-    "lib": ["dom", "es2023"],
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "exactOptionalPropertyTypes": false,
-    "noUncheckedIndexedAccess": false,
-    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es5",
     "types": [
       "core-js"
     ]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
   "exclude": [
     "node_modules",
     "lib"

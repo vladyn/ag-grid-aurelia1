@@ -1,20 +1,15 @@
 {
-  "name": "ag-grid-aurelia-plugin",
-  "version": "31.3.10",
-  "description": "ag-Grid Aurelia Component, a fork of Niall Crosby <niall.crosby@gmail.com>",
-  "credits": "Niall Crosby <niall.crosby@gmail.com>",
+  "name": "ag-grid-aurelia",
+  "version": "21.0.1",
+  "description": "ag-Grid Aurelia Component",
   "main": "./main.js",
   "typings": "./main.d.ts",
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "npm run clean && npm run compile && npm run add-headers",
-    "compile": "tsc",
-    "add-headers": "node scripts/add-headers.js",
-    "watch": "tsc --watch"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vladyn/ag-grid-aurelia1.git"
+    "url": "https://github.com/ag-grid/ag-grid.git"
   },
   "keywords": [
     "grid",
@@ -22,20 +17,23 @@
     "table",
     "aurelia"
   ],
-  "author": "Vladimir Varbanov <vlado.var@gmail.com>",
+  "author": "Niall Crosby <niall.crosby@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vladynet/ag-grid-aurelia1/issues"
+    "url": "https://github.com/ag-grid/ag-grid/issues"
   },
-  "homepage": "https://github.com/vladynet/ag-grid-aurelia1/issues",
+  "homepage": "http://www.ag-grid.com/",
   "devDependencies": {
     "@types/core-js": "^2.5.0",
     "ag-grid-community": "^31.3.4",
     "aurelia-framework": "1.x",
+    "gulp": "^3.9.1",
+    "gulp-header": "^2.0.5",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "merge2": "^1.2.2",
     "reflect-metadata": "^0.1.12",
-    "rimraf": "^6.0.1",
-    "systemjs": "^6.15.1",
-    "typescript": "~5.6.0"
+    "systemjs": "^0.21.5",
+    "typescript": "~3.4.1"
   },
   "peerDependencies": {
     "ag-grid-community": "^31.3.4",
