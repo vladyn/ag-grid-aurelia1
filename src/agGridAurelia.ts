@@ -1,7 +1,7 @@
 import type {
     GridApi,
     GridOptions,
-    GridParams
+    GridParams,
 } from "ag-grid-community";
 
 import {
@@ -15,9 +15,9 @@ import {
     customElement,
     inlineView,
     TaskQueue,
-    ViewResources
+    ViewResources,
 } from "aurelia-framework";
-import { ComponentUtil, createGrid } from "ag-grid-community";
+import { ComponentUtil, createGrid } from "ag-grid-community-v31";
 import { AureliaFrameworkFactory } from "./aureliaFrameworkFactory";
 import { AgGridColumn } from "./agGridColumn";
 import { generateBindables } from "./agUtils";
@@ -28,7 +28,7 @@ interface IPropertyChanges {
     [key: string]: any
 }
 
-@customElement('ag-grid-aurelia')
+@customElement('ag-grid-aurelia-m3')
 @generateBindables(ComponentUtil.ALL_PROPERTIES.filter((property) => property !== 'gridOptions' as any))
 @generateBindables(ComponentUtil.EVENTS)
 // <slot> is required for @children to work.  https://github.com/aurelia/templating/issues/451#issuecomment-254206622

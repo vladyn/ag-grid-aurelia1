@@ -1,4 +1,4 @@
-import {autoinject, customElement, noView, processContent, TargetInstruction} from "aurelia-framework";
+import { autoinject, customElement, noView, processContent, TargetInstruction } from "aurelia-framework";
 
 /**
  * Function will move the elements innerHtml to a template property
@@ -21,7 +21,7 @@ function getTemplate(targetInstruction: any) {
     return `<template>` + <any> targetInstruction.elementInstruction.template + `</template>`
 }
 
-@customElement('ag-cell-template')
+@customElement('ag-cell-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -33,7 +33,7 @@ export class AgCellTemplate {
     }
 }
 
-@customElement('ag-editor-template')
+@customElement('ag-editor-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -45,7 +45,7 @@ export class AgEditorTemplate {
     }
 }
 
-@customElement('ag-filter-template')
+@customElement('ag-filter-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -57,7 +57,7 @@ export class AgFilterTemplate {
     }
 }
 
-@customElement('ag-header-template')
+@customElement('ag-header-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -69,7 +69,7 @@ export class AgHeaderTemplate {
     }
 }
 
-@customElement('ag-header-group-template')
+@customElement('ag-header-group-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -81,7 +81,7 @@ export class AgHeaderGroupTemplate {
     }
 }
 
-@customElement('ag-pinned-row-template')
+@customElement('ag-pinned-row-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -93,7 +93,7 @@ export class AgPinnedRowTemplate {
     }
 }
 
-@customElement('ag-date-template')
+@customElement('ag-date-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)
@@ -105,7 +105,7 @@ export class AgDateTemplate {
     }
 }
 
-@customElement('ag-full-width-row-template')
+@customElement('ag-full-width-row-template-m3')
 @noView()
 @autoinject()
 @processContent(parseElement)

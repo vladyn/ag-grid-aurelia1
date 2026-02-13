@@ -49,5 +49,8 @@
         "ag-grid-aurelia/lib/agTemplate"
       ]
     }
+  },
+  "dependencies": {
+    "ag-grid-community-v31": "npm:ag-grid-community@^31.3.4"
   }
 }

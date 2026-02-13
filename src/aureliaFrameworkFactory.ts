@@ -1,5 +1,5 @@
 import { autoinject, Container, transient, ViewResources } from "aurelia-framework";
-import { VanillaFrameworkOverrides, IFrameworkOverrides, AgPromise } from "ag-grid-community";
+import { VanillaFrameworkOverrides, IFrameworkOverrides, AgPromise } from "ag-grid-community-v31";
 
 @autoinject()
 @transient()
