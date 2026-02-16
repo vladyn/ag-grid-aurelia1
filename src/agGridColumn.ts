@@ -1,5 +1,5 @@
-import {autoinject, child, children, customElement, inlineView} from "aurelia-framework";
-import {ColDef} from "ag-grid-community";
+import { autoinject, child, children, customElement, inlineView } from "aurelia-framework";
+import { ColDef } from "ag-grid-community-v31";
 import {
     AgCellTemplate,
     AgEditorTemplate,
@@ -7,11 +7,11 @@ import {
     AgHeaderGroupTemplate,
     AgHeaderTemplate, AgPinnedRowTemplate
 } from "./agTemplate";
-import {generateBindables} from "./agUtils";
+import { generateBindables } from "./agUtils";
 
-@customElement('ag-grid-column')
+@customElement('ag-grid-column-m3')
 @generateBindables(["colId", "sort", "sortedAt", "sortingOrder", "field", "headerValueGetter", "hideCol", "pinned",
-    "tooltipField", "headerTooltip", "valueGetter", "keyCreator", "floatingFilterComponentFramework", "rowDrag", 
+    "tooltipField", "headerTooltip", "valueGetter", "keyCreator", "floatingFilterComponentFramework", "rowDrag",
     "width", "minWidth", "maxWidth", "cellClass", "cellStyle", "cellRenderer", "cellRendererFramework",
     "cellRendererParams", "cellEditor", "cellEditorFramework", "cellEditorParams", "floatingCellRenderer",
     "floatingCellRendererFramework", "floatingCellRendererParams", "cellFormatter", "floatingCellFormatter",

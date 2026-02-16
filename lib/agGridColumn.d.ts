@@ -1,5 +1,5 @@
-// ag-grid-aurelia-plugin v31.3.8
-import { ColDef } from "ag-grid-community";
+// ag-grid-aurelia-plugin v31.3.10
+import { ColDef } from "ag-grid-community-v31";
 import { AgCellTemplate, AgEditorTemplate, AgFilterTemplate, AgHeaderGroupTemplate, AgHeaderTemplate, AgPinnedRowTemplate } from "./agTemplate";
 export declare class AgGridColumn {
     private mappedColumnProperties;

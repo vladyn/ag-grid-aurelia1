@@ -1,6 +1,6 @@
-// ag-grid-aurelia-plugin v31.3.8
+// ag-grid-aurelia-plugin v31.3.10
 import { Container, ViewResources } from "aurelia-framework";
-import { IFrameworkOverrides, AgPromise } from "ag-grid-community";
+import { IFrameworkOverrides, AgPromise } from "ag-grid-community-v31";
 export declare class AureliaFrameworkFactory implements IFrameworkOverrides {
     setInterval(action: any, interval?: any): AgPromise<number>;
     shouldWrapOutgoing?: boolean;

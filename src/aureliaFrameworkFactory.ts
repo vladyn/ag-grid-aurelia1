@@ -1,5 +1,5 @@
-import {autoinject, Container, transient, ViewResources} from "aurelia-framework";
-import {VanillaFrameworkOverrides, IFrameworkOverrides, AgPromise} from "ag-grid-community";
+import { autoinject, Container, transient, ViewResources } from "aurelia-framework";
+import { VanillaFrameworkOverrides, IFrameworkOverrides, AgPromise } from "ag-grid-community-v31";
 
 @autoinject()
 @transient()
@@ -48,7 +48,4 @@ export class AureliaFrameworkFactory implements IFrameworkOverrides {
     frameworkComponent(name: string): any {
         return this._baseFrameworkFactory.frameworkComponent(name);
     }
-
-    // Add any additional missing methods based on the IFrameworkOverrides interface
-    // You may need to check the ag-grid documentation for the complete interface
 }
