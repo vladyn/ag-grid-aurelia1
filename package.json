@@ -30,7 +30,7 @@
   "homepage": "https://github.com/vladynet/ag-grid-aurelia1/issues",
   "devDependencies": {
     "@types/core-js": "^2.5.0",
-    "ag-grid-community": "^31.3.4",
+    "ag-grid-community-v31": "npm:ag-grid-community@^31.3.4",
     "aurelia-framework": "1.x",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^6.0.1",
@@ -49,8 +49,5 @@
         "ag-grid-aurelia/lib/agTemplate"
       ]
     }
-  },
-  "dependencies": {
-    "ag-grid-community-v31": "npm:ag-grid-community@^31.3.4"
   }
 }
